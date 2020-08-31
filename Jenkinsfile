@@ -21,7 +21,7 @@ spec:
     CREDS = credentials('theta_aws_creds')
     AWS_ACCESS_KEY_ID = "${CREDS_USR}"
     AWS_SECRET_ACCESS_KEY = "${CREDS_PSW}"
-    OWNER = 'theta-team'
+    OWNER = 'theta'
     PROJECT_NAME = 'web-server'
   }
   stages {
@@ -33,7 +33,7 @@ spec:
           }
       }
   }
- post {
+   post {
     success {
         build quietPeriod: 0, wait: false, job: 'theta-packer-agent'
     }
